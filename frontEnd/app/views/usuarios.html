@@ -12,7 +12,7 @@
          <div class="col-md-6 text-right">
            <div class="form-inline form-group">
              <label for="filter-list">Busca </label>
-             <input type="text" class="form-control pagination" id="filter-list" placeholder="Nome do usuário" ng-model="searchText.nome">
+             <input type="text" class="form-control pagination" id="filter-list" placeholder=" Nome do usuário" ng-model="searchText.nome">
            </div>
          </div>
        </div>
@@ -44,10 +44,10 @@
           previous-text = "Anterior" next-text="Próximo" first-text="Primeiro" last-text="Último"></uib-pagination>
         </div>
       </div>
-      Existem {{usuarios.length}} usuarios.
+       <strong>Existem {{usuarios.length}} usuarios</strong>
    </div>
 </div>
 
-<button type="button" class="btn btn-primary" ng-click="criaUsuario()">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Usuario
+<button type="button" class="btn btn-default" ng-click="criaUsuario()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Usuario
 </button>

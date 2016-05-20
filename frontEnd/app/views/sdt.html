@@ -15,11 +15,11 @@
             </tbody>
          </table>
       </div>
-       <strong>Existem {{fases.length}} fases.</strong>
+       <strong>Existem {{fases.length}} fases</strong>
    </div>
 </div>
 
-<button type="button" class="btn btn-default" ng-click="criaFase()" style="border-radius: 100%">
+<button type="button" class="btn btn-default" ng-click="criaFase()" style="border-radius: 100%" data-toggle="tooltip" title="Adicionar nova Fase">
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  
 </button>
 
@@ -81,8 +81,8 @@
    </div>
 </div>
 
-<button type="button" class="btn btn-primary" ng-click="criaSubfase()">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Subfase
+<button type="button" class="btn btn-default" ng-click="criaSubfase()" style="border-radius: 100%" data-toggle="tooltip" title="Adicionar nova Subfase">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 </button>
 
 <div class="panel panel-success" style = "margin-top: 1em">
@@ -102,12 +102,12 @@
             </tbody>
          </table>
       </div>
-      Existem {{secoes.length}} seções.
+       <strong>Existem {{secoes.length}} seções</strong>
    </div>
 </div>
 
-<button type="button" class="btn btn-primary" ng-click="criaSecao()">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Seção
+<button type="button" class="btn btn-default" ng-click="criaSecao()" style="border-radius: 100%" data-toggle="tooltip" title="Adicionar nova Seção">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 </button>
 
 <div class="panel panel-success" style = "margin-top: 1em">
@@ -129,10 +129,10 @@
             </tbody>
          </table>
       </div>
-      Existem {{funcoes.length}} funções.
+       <strong>Existem {{funcoes.length}} funções</strong>
    </div>
 </div>
 
-<button type="button" class="btn btn-primary" ng-click="criaFuncao()">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Função
+<button type="button" class="btn btn-default" ng-click="criaFuncao()" style="border-radius: 100%" data-toggle="tooltip" title="Adicionar nova Função">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 </button>
