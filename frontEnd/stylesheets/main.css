@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #F5F7FA;
+}
+
+.pagination{
+  width: auto;
+  display: inline-block;
+}
+
+/*.panel .panel-primary{
+        color: #23b744;
+        font-size: 1em
+    }*/
+    
+div div ul li a {
+    color: #23b744;
+    font-size: 1.3em
+}
+
+.modal-header {
+    background-color: #23b744;
+    color: white;
+    text-align: center
+        
+}
+/*div .modal-footer button:first-child {
+    background-color: blue;
+    color: white
+    
+    
+}*/
+
+/*div .modal-footer button:first-child:hover {
+    background-color: lightsteelblue;
+    color: black;
+    
+}
+
+div .modal-footer button   {
+    background-color: red;
+    color: white
+}*/
+
+div .panel .panel-heading {
+    background-color: #23b744;
+    color: white;
+    text-align: center;
+    font-size: 1.5em
+}
+

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default" style="background-color: #23b744">
+<div class="container-fluid">
+<div class="navbar-header">
+    <a class="navbar-brand text-danger nonSelectableText" style="color: white">Controle de Produção 1ªDL</a>
+</div>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a ng-click="logout()" href="" data-toggle="tooltip" title="Encerrar a sessão"><span class="glyphicon glyphicon-off"  style="color: white">             
+                </span></a>
+        </li>
+    </ul>
+</div>
+
+</nav>
+<div style="width:100%; height:90%; margin-left: 10px" class="row">
+    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2" id="side-menu">
+        <ul class="nav nav-pills nav-stacked" activeborder">
+        
+            <li ng-click="abaAtiva = 'atividades'">
+                <a href=""  style="" data-toggle="tooltip" title="Gerenciamento das Atividades"><span class="glyphicon glyphicon-tasks glyphicon-menu" aria-hidden="true"></span>  Atividades</a>
+            </li>
+            <li ng-click="abaAtiva = 'relatorio_ind'">
+                <a href="" data-toggle="tooltip" title="Relatório por usuário"><span class="glyphicon glyphicon-stats glyphicon-menu" aria-hidden="true"></span>  Relatório Individual</a>
+            </li>
+          <li ng-click="abaAtiva = 'g_fluxo'">
+              <a href="" data-toggle="tooltip" title="Gerenciamento de Fluxo de Trabalho"><span class="glyphicon glyphicon-random glyphicon-menu" aria-hidden="true"></span> Fluxo</a>
+          </li>
+          <li ng-click="abaAtiva = 'g_usuarios'">
+              <a href="" data-toggle="tooltip" title="Gerenciamento dos Usuários por Seção"><span class="glyphicon glyphicon-user glyphicon-menu" aria-hidden="true"></span> Gerenciamento de Usuários</a>
+          </li>
+          <li ng-click="abaAtiva = 'relatorio_geral'">
+              <a href="" data-toggle="tooltip" title="Gerar Relatório Geral"><span class="glyphicon glyphicon-stats glyphicon-globe glyphicon-menu" aria-hidden="true"></span> Relatório Geral</a>
+          </li>
+          <li ng-click="abaAtiva = 'usuarios'">
+              <a href="" data-toggle="tooltip" title="Administração de Usuários"><span class="glyphicon glyphicon-user glyphicon-menu" aria-hidden="true"></span> Usuários</a>
+          </li>
+          <li ng-click="abaAtiva = 'projetos'">
+              <a href="" data-toggle="tooltip" title="Gerenciamento de Projetos e Subprojetos"><span class="glyphicon glyphicon-list-alt glyphicon-menu" aria-hidden="true"></span> Projetos</a>
+          </li>
+          <li ng-click="abaAtiva = 'sdt'">
+              <a href="" data-toggle="tooltip" title="Gerenciamento de Fases, Subfases, Seções, Funções"><span class="glyphicon glyphicon-book glyphicon-menu" aria-hidden="true"></span> SDT</a> 
+          </li>
+        </ul>
+    </div>
+    <div class="col-sm-10 col-md-10 col-lg-10 col-xs-10" style="height:100%; min-height: 100%;" ng-switch on="abaAtiva">
+      <div ng-switch-when="atividades" ng-controller="atividadeCtrl"><div ng-include src = "'app/views/atividades.html'"></div></div>
+       <div ng-switch-when="relatorio_ind" ng-controller="relatorioIndCtrl"><div ng-include src = "'app/views/relatorio_ind.html'"></div></div>
+       <div ng-switch-when="g_fluxo" ng-controller="fluxoCtrl"><div ng-include src = "'app/views/g_fluxo.html'"></div></div>
+       <div ng-switch-when="g_usuarios" ng-controller="gerenciaUserCtrl"><div ng-include src = "'app/views/g_usuarios.html'"></div></div>
+       <div ng-switch-when="relatorio_geral" ng-controller="relatorioGeralCtrl"><div ng-include src = "'app/views/relatorio_geral.html'"></div></div>
+       <div ng-switch-when="usuarios" ng-controller="usuarioCtrl"><div ng-include src = "'app/views/usuarios.html'"></div></div>
+       <div ng-switch-when="projetos" ng-controller="projetoCtrl"><div ng-include src = "'app/views/projetos.html'"></div></div>
+       <div ng-switch-when="sdt" ng-controller="sdtCtrl"><div ng-include src = "'app/views/sdt.html'"></div></div>
+    </div>
+</div>
+<style>
+    
+    
+</style>

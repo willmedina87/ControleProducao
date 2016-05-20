@@ -1,0 +1,70 @@
+<div class="panel panel-primary" style = "margin-top: 1em">
+   <div class="panel-heading">Projetos</div>
+   <div class="panel-body">
+     <div ng-show="projetos.length > 0">
+         <table class="table table-hover table-responsive" width="100%">
+           <thead>
+              <tr>
+                 <th>Nome</th>
+              </tr>
+           </thead>
+            <tbody>
+               <tr ng-repeat="projeto in projetos track by $index">
+                   <td>{{ projeto.nome }}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      Existem {{projeto.length}} projetos.
+   </div>
+</div>
+
+<button type="button" class="btn btn-primary" ng-click="criaProjeto()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Projeto
+</button>
+
+<div class="panel panel-primary" style = "margin-top: 1em">
+   <div class="panel-heading">Subprojetos</div>
+   <div class="panel-body">
+     <div ng-show="subprojetos.length > 0">
+       <div class="row">
+         <div class="col-md-6">
+           <label for="">Mostrar
+             <select class="form-control pagination" ng-model="numPerPage" ng-options="numPage for numPage in numsForPage" ng-change="changeNum(numPerPage);"></select>
+             itens por página
+           </label>
+         </div>
+         <div class="col-md-6 text-right">
+           <div class="form-inline form-group">
+             <label for="filter-list">Busca </label>
+             <input type="text" class="form-control pagination" id="filter-list" placeholder=" Subprojeto" ng-model="searchText.nome">
+           </div>
+         </div>
+       </div>
+         <table class="table table-hover  table-responsive" width="100%">
+           <thead>
+              <tr>
+                 <th ng-click="sort('nome')">Nome <span class="glyphicon sort-icon" ng-show="sortKey=='nome'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                 <th ng-click="sort('projeto')">Projeto <span class="glyphicon sort-icon" ng-show="sortKey=='projeto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+              </tr>
+           </thead>
+            <tbody>
+               <tr ng-repeat="subprojeto in filtered = (subprojetos | filter: searchText) | orderBy:sortKey:reverse | startFrom: (currentPage-1)*numPerPage | limitTo: numPerPage track by $index" ng-click="modificaSubprojeto(subprojeto)">
+                  <td>{{ subprojeto.nome }}</td>
+                  <td>{{ subprojeto.projeto.nome }}</td>
+               </tr>
+            </tbody>
+         </table>
+        <div class="clearfix" ng-show="subprojetos.length > numPerPage">
+          <uib-pagination total-items="filtered.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm pull-right"
+          ng-change="pageChanged(currentPage)" items-per-page="numPerPage" boundary-links="true" rotate="false"
+          previous-text = "Anterior" next-text="Próximo" first-text="Primeiro" last-text="Último"></uib-pagination>
+        </div>
+      </div>
+       <strong>Existem {{subprojetos.length}} subprojetos</strong>
+   </div>
+</div>
+
+<button type="button" class="btn btn-primary" ng-click="criaSubprojeto()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Subprojeto
+</button>

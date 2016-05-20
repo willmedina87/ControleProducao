@@ -1,0 +1,21 @@
+{
+    "name": "control",
+    "description": "",
+    "version": "0.0.1",
+    "main": "./control.js",
+    "author": {
+        "name": "medina",
+        "email": "willmedina87@gmail.com"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "none"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/YOUR_LOGIN/control.git"
+    },
+    "bugs": {
+        "url": "http://github.com/YOUR_LOGIN/control/issues"
+    }
+}

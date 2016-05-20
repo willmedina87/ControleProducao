@@ -1,0 +1,76 @@
+<div class="panel panel-primary" style = "margin-top: 1em">
+   <div class="panel-heading">Atividades em execução</div>
+   <div class="panel-body">
+     <div ng-show="atividadeEmExecucaoSecao.length > 0">
+         <table class="table table-hover table-responsive" width="100%">
+           <thead>
+             <tr>
+                <th>MI</th>
+                <th>Subfase</th>
+                <th>Usuario</th>
+             </tr>
+           </thead>
+            <tbody>
+               <tr ng-repeat="ativExec in atividadeEmExecucaoSecao | orderBy: 'dataInicio' track by $index">
+                 <td>{{ ativExec.tarefa.mi }}</td>
+                 <td>{{ ativExec.subfase.nome }}</td>
+                 <td>{{ ativExec.operador.postGrad }} {{ ativExec.operador.nomeGuerra }}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      Existem {{atividadeEmExecucaoSecao.length}} atividades em execução.
+   </div>
+</div>
+
+<div class="panel panel-primary" style = "margin-top: 1em">
+   <div class="panel-heading">Atividades distribuídas</div>
+   <div class="panel-body">
+     <div ng-show="atividadeDistribuidaSecao.length > 0">
+         <table class="table table-hover table-responsive" width="100%">
+           <thead>
+             <tr>
+                <th>Prioridade</th>
+                <th>MI</th>
+                <th>Subfase</th>
+             </tr>
+           </thead>
+            <tbody>
+               <tr ng-repeat="ativDist in atividadeDistribuidaSecao | orderBy: 'prioridade'  track by $index"  ng-click="distribuiAtiv(ativDist)">
+                 <td>{{ ativDist.prioridade }}</td>
+                 <td>{{ ativDist.tarefa.mi }}</td>
+                 <td>{{ ativDist.subfase.nome }}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      Existem {{atividadeDistribuidaSecao.length}} atividades distribuídas.
+   </div>
+</div>
+
+<div class="panel panel-primary" style = "margin-top: 1em">
+   <div class="panel-heading">Atividades não distribuídas</div>
+   <div class="panel-body">
+     <div ng-show="atividadeNaoDistribuidaSecao.length > 0">
+         <table class="table table-hover table-responsive" width="100%">
+           <thead>
+              <tr>
+                 <th>Prioridade</th>
+                 <th>MI</th>
+                 <th>Subfase</th>
+                 <th>Usuarios</th>
+              </tr>
+           </thead>
+            <tbody>
+               <tr ng-repeat="ativNaoDist in atividadeNaoDistribuidaSecao | orderBy: 'prioridade'  track by $index" ng-click="distribuiAtiv(ativNaoDist)">
+                 <td>{{ ativNaoDist.prioridade }}</td>
+                 <td>{{ ativNaoDist.tarefa.mi }}</td>
+                 <td>{{ ativNaoDist.subfase.nome }}</td>
+                 <td>{{ ativNaoDist.subfase.funcoesTexto }}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      Existem {{atividadeNaoDistribuidaSecao.length}} atividades não distrbuídas.
+   </div>
+</div>
