@@ -3,12 +3,58 @@
 <div class="navbar-header">
     <a class="navbar-brand text-danger nonSelectableText" style="color: white">Controle de Produção 1ªDL</a>
 </div>
-    <ul class="nav navbar-nav navbar-right">
+<!--    <ul class="nav navbar-nav navbar-right">
         <li>
             <a ng-click="logout()" href="" data-toggle="tooltip" title="Encerrar a sessão"><span class="glyphicon glyphicon-off"  style="color: white">             
                 </span></a>
         </li>
-    </ul>
+    </ul>    -->
+        
+
+<!--ABA UTILIZADA PARA LOGOUT E INFORMAÇÕES DO USUARIO   -->
+    <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user" style="color: white"></span>
+                        <strong style="color: white">{{ usuario.nomeGuerra }}</strong>
+                        <span class="glyphicon glyphicon-off" style="color: white"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>Fulano de Tal</strong></p>
+                                        <p class="text-left small">fulanodetal@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="" class="btn btn-primary btn-block btn-sm">Perfil</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                        <li class="navbar-login-session-bg">
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <a ng-click="logout()" href="" class="btn btn-danger btn-block">Sair</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>    
+        
+    
 </div>
 
 </nav>
@@ -37,21 +83,21 @@
           <li ng-click="abaAtiva = 'projetos'">
               <a href="" data-toggle="tooltip" title="Gerenciamento de Projetos e Subprojetos"><span class="glyphicon glyphicon-list-alt glyphicon-menu" aria-hidden="true"></span> Projetos</a>
           </li>
-          <li ng-click="abaAtiva = 'sdt'" class="dropdown">
+    <!--      <li ng-click="abaAtiva = 'sdt'" class="dropdown">
               <a href="" data-toggle="tooltip" title="Gerenciamento de Fases, Subfases, Seções, Funções" class="dropdown-toggle" data-toggle="dropdown">
                   <span class="glyphicon glyphicon-book glyphicon-menu" aria-hidden="true"></span> SDT
               </a> 
                     
-          </li>
+          </li>   -->
           
           <li class="dropdown">
             <a class="dropdown-toggle glyphicon glyphicon-book glyphicon-menu" data-toggle="dropdown" href=""> SDT
             <span class="caret" aria-hidden="true"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="">Fases</a></li>
-                <li><a href="">Subfases</a></li>
-                <li><a href="">Seções</a></li> 
-                <li><a href="">Funções</a></li> 
+                <li ng-click="abaAtiva = 'fases'"><a href="">Fases</a></li>
+                <li ng-click="abaAtiva = 'subfases'"><a href="">Subfases</a></li>
+                <li ng-click="abaAtiva = 'secoes'"><a href="">Seções</a></li> 
+                <li ng-click="abaAtiva = 'funcoes'"><a href="">Funções</a></li> 
             </ul>
         </li>
         </ul>
@@ -65,6 +111,11 @@
        <div ng-switch-when="usuarios" ng-controller="usuarioCtrl"><div ng-include src = "'app/views/usuarios.html'"></div></div>
        <div ng-switch-when="projetos" ng-controller="projetoCtrl"><div ng-include src = "'app/views/projetos.html'"></div></div>
        <div ng-switch-when="sdt" ng-controller="sdtCtrl"><div ng-include src = "'app/views/sdt.html'"></div></div>
+       <div ng-switch-when="fases" ng-controller="sdtCtrl"><div ng-include src = "'app/views/fases.html'"></div></div>
+       <div ng-switch-when="subfases" ng-controller="sdtCtrl"><div ng-include src = "'app/views/subfases.html'"></div></div>
+       <div ng-switch-when="secoes" ng-controller="sdtCtrl"><div ng-include src = "'app/views/secoes.html'"></div></div>
+       <div ng-switch-when="funcoes" ng-controller="sdtCtrl"><div ng-include src = "'app/views/funcoes.html'"></div></div>
+       
     </div>
 </div>
 <style>

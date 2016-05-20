@@ -11,8 +11,16 @@
          </div>
          <div class="col-md-6 text-right">
            <div class="form-inline form-group">
-             <label for="filter-list">Busca </label>
-             <input type="text" class="form-control pagination" id="filter-list" placeholder=" Nome do usuário" ng-model="searchText.nome">
+             <label for="filter-list"></label>
+             
+             <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <input type="text"  class="form-control " id="filter-list" placeholder=" Nome do usuário" ng-model="searchText.nome"/>
+            </div>
+             
+             
            </div>
          </div>
        </div>
