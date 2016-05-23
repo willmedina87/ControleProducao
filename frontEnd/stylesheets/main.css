@@ -12,7 +12,7 @@ html, body {
 
     
 div div ul li a {
-    color: #23b744;
+    color: white;
     font-size: 1.3em
 }
 
@@ -62,3 +62,13 @@ overflow: hidden;
 {
     font-size: 87px;
 }
+
+#side-menu{
+    background-color: #23b744;
+    border-radius: 10px
+    
+}/*
+
+.nav .nav-pills .nav-stacked {
+    color:  white
+}*/
