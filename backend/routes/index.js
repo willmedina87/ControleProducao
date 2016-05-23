@@ -37,6 +37,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/login', jsonParser, function(req, res, next) {
+  operations.login(req, res);
+});
+
 
 router.get('/data/:layer', layersVerify, function(req, res, next) {
   operations.get[req.params.layer](req, res);

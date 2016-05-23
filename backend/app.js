@@ -39,6 +39,18 @@
     next(err);
   });
 
+  //clear cache
+
+  app.use(function(req, res, next){
+
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires",0);
+    next();
+});
+
+app.disable('etag')
+
   // development error handler
   // will print stacktrace
   if (app.get('env') === 'development') {

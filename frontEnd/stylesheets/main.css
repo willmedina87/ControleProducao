@@ -9,11 +9,23 @@ html, body {
   display: inline-block;
 }
 
-
+#side-menu{
+/*    background-color: #23b744;*/
+    border-radius: 10px;
+    height: 700px;
+    border: activeborder solid;
+    border
+}
     
 div div ul li a {
-    color: white;
-    font-size: 1.3em
+    color: gray;
+    font-size: 1.4em
+   
+}
+
+div div ul li {
+    height: 70px;
+   
 }
 
 .modal-header {
@@ -63,12 +75,4 @@ overflow: hidden;
     font-size: 87px;
 }
 
-#side-menu{
-    background-color: #23b744;
-    border-radius: 10px
-    
-}/*
 
-.nav .nav-pills .nav-stacked {
-    color:  white
-}*/
